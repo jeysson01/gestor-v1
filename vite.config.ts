@@ -8,7 +8,7 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       injectRegister: 'auto',
-      includeAssets: ['pwa-192.png', 'pwa-512.png', 'apple-touch-icon.png'],
+      includeAssets: ['GS.png', 'pwa-192.png', 'pwa-512.png', 'apple-touch-icon.png'],
       manifest: {
         name: 'Inventario Pro',
         short_name: 'Inventario Pro',
