@@ -1,0 +1,31 @@
+[package]
+name = "inventario-pro"
+version = "1.0.0"
+description = "Inventario Pro"
+authors = ["Inventario Pro"]
+edition = "2021"
+rust-version = "1.90"
+
+[lib]
+name = "inventario_pro_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.7.4", features = [] }
+
+[dependencies]
+tauri = { version = "2.12.5", features = [] }
+tauri-plugin-opener = "2.7.2"
+tauri-plugin-sql = { version = "2.6.0", features = ["sqlite"] }
+tauri-plugin-barcode-scanner = "2.5.3"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rxing = { version = "0.9.3", default-features = false, features = ["decoders", "qrcode", "oned", "aztec", "datamatrix", "pdf417", "full_barcode_format_support", "encoding_rs"] }
+image = { version = "0.25", default-features = false, features = ["jpeg", "png"] }
+
+[dev-dependencies]
+qrcode = "0.14"
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]
